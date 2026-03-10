@@ -9,13 +9,13 @@ export function TopBar() {
       <div className="topbar__inner">
         <div className="brand">
           <span className="brand__dot" />
-          <span className="brand__text">ERP-B2B</span>
+          <span className="brand__text">Energy B2B</span>
         </div>
 
         <nav className="nav">
-          {user?.role === 'client' && <Link to="/client">Client</Link>}
-          {user?.role === 'admin' && <Link to="/admin">Admin</Link>}
-          {user?.role === 'personnel' && <Link to="/personnel">Personnel</Link>}
+          {user?.role === 'client' && <Link to="/client">Portal</Link>}
+          {user?.role === 'admin' && <Link to="/admin">Operations</Link>}
+          {user?.role === 'personnel' && <Link to="/personnel">Operations</Link>}
         </nav>
 
         <div className="topbar__right">
