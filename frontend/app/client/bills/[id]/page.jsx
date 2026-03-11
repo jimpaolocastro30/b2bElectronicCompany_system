@@ -29,10 +29,10 @@ export default function BillDetailPage() {
   if (!bill) return <section className="panel"><p>Loading…</p></section>
 
   return (
-    <section className="panel">
+    <section className="panel fade-in">
       <h2>Bill details</h2>
       <p className="muted">
-        {new Date(bill.periodStart).toLocaleDateString()} – {new Date(bill.periodEnd).toLocaleDateString()} · {bill.status}
+        {new Date(bill.periodStart).toLocaleDateString()} – {new Date(bill.periodEnd).toLocaleDateString()} · <span className={`badge badge--${bill.status}`}>{bill.status}</span>
       </p>
       <div className="table">
         <div className="row head">
@@ -44,7 +44,7 @@ export default function BillDetailPage() {
         </div>
         {(bill.services || []).map((s, i) => (
           <div className="row" key={i}>
-            <div>{s.serviceType}</div>
+            <div><span className={`badge badge--${s.serviceType}`}>{s.serviceType}</span></div>
             <div className="right">{Number(s.usage).toFixed(2)}</div>
             <div>{s.unit}</div>
             <div className="right">{bill.currency} {Number(s.unitPrice).toFixed(2)}</div>

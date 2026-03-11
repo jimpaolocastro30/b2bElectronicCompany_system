@@ -24,7 +24,7 @@ export default function AnomaliesPage() {
   }, [type])
 
   return (
-    <section className="panel">
+    <section className="panel fade-in">
       <h2>Anomalies</h2>
       <p className="muted">Security and usage anomaly flags.</p>
       {error && <div className="error">{error}</div>}
@@ -47,8 +47,8 @@ export default function AnomaliesPage() {
         </div>
         {list.map((a) => (
           <div className="row" key={a.id}>
-            <div>{a.relatedType}</div>
-            <div>{a.severity}</div>
+            <div><span className="badge badge--pending">{a.relatedType}</span></div>
+            <div><span className={`badge badge--${a.severity}`}>{a.severity}</span></div>
             <div>{a.description}</div>
             <div>{a.detectedAt ? new Date(a.detectedAt).toLocaleString() : '—'}</div>
             <div>{a.resolvedAt ? new Date(a.resolvedAt).toLocaleString() : '—'}</div>

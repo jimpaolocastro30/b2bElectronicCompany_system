@@ -45,7 +45,7 @@ export default function MarketBidsPage() {
   }
 
   return (
-    <section className="panel">
+    <section className="panel fade-in">
       <h2>Market bids</h2>
       <p className="muted">Day-ahead market bids (placeholder; no ISO connectivity).</p>
       {error && <div className="error">{error}</div>}
@@ -101,7 +101,7 @@ export default function MarketBidsPage() {
             <div>{b.hourBlock}</div>
             <div className="right">{b.volume}</div>
             <div className="right">{b.currency} {b.price}</div>
-            <div>{b.status}</div>
+            <div><span className={`badge badge--${b.status}`}>{b.status}</span></div>
           </div>
         ))}
       </div>

@@ -47,7 +47,7 @@ export default function UsageIngestPage() {
   ], null, 2)
 
   return (
-    <section className="panel">
+    <section className="panel fade-in">
       <h2>Usage ingest</h2>
       <p className="muted">Bulk upload usage readings (e.g. from IoT gateways).</p>
       {error && <div className="error">{error}</div>}

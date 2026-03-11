@@ -23,9 +23,11 @@ export default function BillsPage() {
   }, [])
 
   return (
-    <section className="panel">
-      <h2>Bills</h2>
-      <p className="muted">View and manage your utility bills.</p>
+    <section className="panel fade-in">
+      <div className="section-header">
+        <h2>Bills</h2>
+        <p className="muted">View and manage your utility bills.</p>
+      </div>
       {error && <div className="error">{error}</div>}
       <div className="table">
         <div className="row head">
@@ -39,7 +41,7 @@ export default function BillsPage() {
             <div>
               {new Date(b.periodStart).toLocaleDateString()} – {new Date(b.periodEnd).toLocaleDateString()}
             </div>
-            <div>{b.status}</div>
+            <div><span className={`badge badge--${b.status}`}>{b.status}</span></div>
             <div className="right">
               {b.currency} {Number(b.totalAmount).toFixed(2)}
             </div>

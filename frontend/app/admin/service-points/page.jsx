@@ -27,7 +27,7 @@ export default function ServicePointAdminPage() {
   }, [q, serviceType])
 
   return (
-    <section className="panel">
+    <section className="panel fade-in">
       <h2>Service points</h2>
       <p className="muted">Search and filter all service points.</p>
       {error && <div className="error">{error}</div>}
@@ -61,11 +61,11 @@ export default function ServicePointAdminPage() {
         {list.map((sp) => (
           <div className="row" key={sp.id}>
             <div className="mono">{sp.accountNumber}</div>
-            <div>{sp.serviceType}</div>
+            <div><span className={`badge badge--${sp.serviceType}`}>{sp.serviceType}</span></div>
             <div className="mono">{sp.meterId}</div>
             <div className="mono">{sp.customerId?.slice(-8)}</div>
             <div>{sp.gridZone || '—'}</div>
-            <div>{sp.isActive ? 'Active' : 'Inactive'}</div>
+            <div><span className={`badge ${sp.isActive ? 'badge--active' : 'badge--cancelled'}`}>{sp.isActive ? 'Active' : 'Inactive'}</span></div>
           </div>
         ))}
       </div>

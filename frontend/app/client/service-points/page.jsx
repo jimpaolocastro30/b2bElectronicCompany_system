@@ -31,7 +31,7 @@ export default function ServicePointsPage() {
   )
 
   return (
-    <section className="panel">
+    <section className="panel fade-in">
       <h2>Service Points</h2>
       <p className="muted">Your power, gas, and water meter points.</p>
       {error && <div className="error">{error}</div>}
@@ -55,12 +55,12 @@ export default function ServicePointsPage() {
         {points.map((sp) => (
           <div className="row" key={sp.id}>
             <div className="mono">{sp.accountNumber}</div>
-            <div>{sp.serviceType}</div>
+            <div><span className={`badge badge--${sp.serviceType}`}>{sp.serviceType}</span></div>
             <div className="mono">{sp.meterId}</div>
             <div>
               {[sp.location?.city, sp.location?.region].filter(Boolean).join(', ') || '—'}
             </div>
-            <div>{sp.isActive ? 'Active' : 'Inactive'}</div>
+            <div><span className={`badge ${sp.isActive ? 'badge--active' : 'badge--cancelled'}`}>{sp.isActive ? 'Active' : 'Inactive'}</span></div>
           </div>
         ))}
       </div>

@@ -47,7 +47,7 @@ export default function ContractsPage() {
   }
 
   return (
-    <section className="panel">
+    <section className="panel fade-in">
       <h2>Bilateral contracts</h2>
       <p className="muted">Day-ahead and bilateral energy contracts.</p>
       {error && <div className="error">{error}</div>}
@@ -112,7 +112,7 @@ export default function ContractsPage() {
             <div className="right">{c.currency} {c.price}</div>
             <div>{c.startDate ? new Date(c.startDate).toLocaleDateString() : '—'}</div>
             <div>{c.endDate ? new Date(c.endDate).toLocaleDateString() : '—'}</div>
-            <div>{c.status}</div>
+            <div><span className={`badge badge--${c.status}`}>{c.status}</span></div>
           </div>
         ))}
       </div>

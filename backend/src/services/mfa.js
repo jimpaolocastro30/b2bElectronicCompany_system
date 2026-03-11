@@ -9,8 +9,8 @@ function otpHash(code) {
   return sha256Base64Url(code);
 }
 
-function isMfaRole(role) {
-  return role === "admin" || role === "personnel";
+function isMfaRole() {
+  return false;
 }
 
 function setUserOtp(user, code) {

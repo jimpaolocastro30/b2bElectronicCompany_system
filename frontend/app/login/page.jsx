@@ -43,12 +43,20 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="container">
-      <div className="card">
-        <h1>Sign in</h1>
-        <p className="muted">
-          Energy B2B portal access for Clients, Admins, and Personnel.
-        </p>
+    <div className="login-wrap">
+      <div className="card fade-in" style={{ maxWidth: 420, width: '100%' }}>
+        <div className="center" style={{ marginBottom: 20 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+            <span className="brand__dot" style={{ width: 14, height: 14 }} />
+            <span style={{ fontWeight: 800, fontSize: 20, letterSpacing: '-0.02em' }}>
+              {process.env.NEXT_PUBLIC_SITE_NAME || 'Energy B2B'}
+            </span>
+          </div>
+          <h1>Sign in</h1>
+          <p className="muted">
+            Portal access for Clients, Admins, and Personnel.
+          </p>
+        </div>
 
         <form onSubmit={onSubmit} className="form">
           <label>

@@ -38,7 +38,7 @@ export default function GridStatusPage() {
     }))
 
   return (
-    <section className="panel">
+    <section className="panel fade-in">
       <h2>Grid status</h2>
       <p className="muted">Real-time grid snapshots (region, frequency, load, renewables).</p>
       {error && <div className="error">{error}</div>}
@@ -56,7 +56,7 @@ export default function GridStatusPage() {
         </select>
       </div>
       {chartData.length > 0 && (
-        <div style={{ height: 260, marginTop: 16 }}>
+        <div className="chart-wrap">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData}>
               <CartesianGrid strokeDasharray="3 3" />

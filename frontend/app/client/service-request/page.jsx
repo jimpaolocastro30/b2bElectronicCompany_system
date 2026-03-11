@@ -30,7 +30,7 @@ export default function ServiceRequestPage() {
   }
 
   return (
-    <section className="panel">
+    <section className="panel fade-in">
       <h2>Service request</h2>
       <p className="muted">Submit a meter issue, tariff change, or connection request.</p>
       {error && <div className="error">{error}</div>}

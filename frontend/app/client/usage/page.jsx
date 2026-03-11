@@ -52,7 +52,7 @@ export default function UsagePage() {
     }))
 
   return (
-    <section className="panel">
+    <section className="panel fade-in">
       <h2>Usage</h2>
       <p className="muted">Historical usage by service point.</p>
       {error && <div className="error">{error}</div>}
@@ -85,7 +85,7 @@ export default function UsagePage() {
         </label>
       </div>
       {chartData.length > 0 && (
-        <div style={{ height: 280, marginTop: 16 }}>
+        <div className="chart-wrap">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -97,7 +97,7 @@ export default function UsagePage() {
           </ResponsiveContainer>
         </div>
       )}
-      <div className="table" style={{ marginTop: 16 }}>
+      <div className="table">
         <div className="row head">
           <div>Time</div>
           <div className="right">Value</div>

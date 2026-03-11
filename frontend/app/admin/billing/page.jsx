@@ -29,7 +29,7 @@ export default function BillingRunPage() {
   }
 
   return (
-    <section className="panel">
+    <section className="panel fade-in">
       <h2>Billing run</h2>
       <p className="muted">Generate bills for a period from usage and tariffs.</p>
       {error && <div className="error">{error}</div>}
