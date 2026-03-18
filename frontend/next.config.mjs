@@ -5,7 +5,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
 const ALLOWED_DEV_ORIGINS = (
-  process.env.NEXT_ALLOWED_DEV_ORIGINS || 'http://122.248.193.215,https://122.248.193.215'
+  process.env.NEXT_ALLOWED_DEV_ORIGINS || 'http://122.248.193.215:4000'
 )
   .split(',')
   .map((origin) => origin.trim())
