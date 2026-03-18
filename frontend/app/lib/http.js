@@ -12,7 +12,10 @@ http.interceptors.response.use(
   async (error) => {
     const status = error?.response?.status
     const original = error?.config
-    if (status !== 401 || !original || original.__isRetry) throw error
+    const shouldSkipRefresh = Boolean(
+      original?.skipAuthRefresh || original?.url === '/auth/refresh',
+    )
+    if (status !== 401 || !original || original.__isRetry || shouldSkipRefresh) throw error
 
     if (!refreshing) {
       refreshing = http

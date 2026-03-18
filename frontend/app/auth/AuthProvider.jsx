@@ -11,7 +11,7 @@ export function AuthProvider({ children }) {
 
   const loadMe = useCallback(async () => {
     try {
-      const res = await http.get('/auth/me')
+      const res = await http.get('/auth/me', { skipAuthRefresh: true })
       setUser(res.data.user || null)
     } catch {
       setUser(null)
